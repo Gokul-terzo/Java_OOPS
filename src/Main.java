@@ -1,5 +1,5 @@
 class Account{
-    protected long balance;
+    private long balance;
 
     public Account(long balance){
         this.balance=balance;
@@ -12,6 +12,10 @@ class Account{
     {
         balance-=debit;
     }
+    public void display()
+    {
+        System.out.println("Balance is:"+balance);
+    }
 }
 class SavingsAccount extends Account{  //The savings account class inherits the Account class
     protected float interestRate;
@@ -22,11 +26,7 @@ class SavingsAccount extends Account{  //The savings account class inherits the 
     }
     public void showBalance()
     {
-        System.out.println("The current balance is:"+balance);
-    }
-    public void applyInterest(int years){
-        temp_balance=balance+(balance*(interestRate/100)*years);
-        System.out.println("The balance after interest is applied for the given duration is:"+temp_balance);
+        display();
     }
 }
 public class Main { //here public is the access specifier for the class
@@ -37,6 +37,5 @@ public class Main { //here public is the access specifier for the class
         account1.showBalance();
         account1.debit(3000);
         account1.showBalance();
-        account1.applyInterest(3);
     }
 }
