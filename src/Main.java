@@ -1,41 +1,22 @@
-class Account{
-    private long balance;
+abstract class Shape{  //A class can be abstracted using the abstraction keyword
+    abstract void area(int l); //This method must be declared in the child class
+}
+class Circle extends Shape{
 
-    public Account(long balance){
-        this.balance=balance;
-    }
-    protected void credit(long credit)
-    {
-        balance+=credit;
-    }
-    protected void debit(long debit)
-    {
-        balance-=debit;
-    }
-    public void display()
-    {
-        System.out.println("Balance is:"+balance);
+    public void area(int r){
+        System.out.println("Area of circle is:"+(3.14*Math.pow(r,2)));
     }
 }
-class SavingsAccount extends Account{  //The savings account class inherits the Account class
-    protected float interestRate;
-    public float temp_balance;
-    public SavingsAccount(long balance,float interest){
-        super(balance);
-        interestRate=interest;
-    }
-    public void showBalance()
-    {
-        display();
+class Square extends Shape{
+    public void area(int a){
+        System.out.println("Area of the square is:"+(a*a));
     }
 }
 public class Main { //here public is the access specifier for the class
     public static void main(String args[]){
-        SavingsAccount account1=new SavingsAccount(10000L,5.13F);
-        account1.showBalance();
-        account1.credit(10000);
-        account1.showBalance();
-        account1.debit(3000);
-        account1.showBalance();
+        Shape circle1=new Circle(); //This makes circle1 a reference to the Shape class and implments the method in Circle class
+        circle1.area(15);
+        Shape square1=new Square();
+        square1.area(4);
     }
 }
