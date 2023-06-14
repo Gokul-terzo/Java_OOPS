@@ -2,12 +2,13 @@ interface Shape{  //An interface
      void area(int l); //This method must be declared in the child class
 }
 class Circle implements Shape{  //the class inherits the interface using implements keyword
-
+    @Override
     public void area(int r){
         System.out.println("Area of circle is:"+(3.14*Math.pow(r,2)));
     }
 }
 class Square implements Shape{
+    @Override
     public void area(int a){
         System.out.println("Area of the square is:"+(a*a));
     }
