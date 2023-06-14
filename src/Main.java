@@ -1,13 +1,13 @@
-abstract class Shape{  //A class can be abstracted using the abstraction keyword
-    abstract void area(int l); //This method must be declared in the child class
+interface Shape{  //An interface
+     void area(int l); //This method must be declared in the child class
 }
-class Circle extends Shape{
+class Circle implements Shape{  //the class inherits the interface using implements keyword
 
     public void area(int r){
         System.out.println("Area of circle is:"+(3.14*Math.pow(r,2)));
     }
 }
-class Square extends Shape{
+class Square implements Shape{
     public void area(int a){
         System.out.println("Area of the square is:"+(a*a));
     }
