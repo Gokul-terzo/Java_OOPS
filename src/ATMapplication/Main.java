@@ -7,7 +7,7 @@ public class Main {
     private HashMap<Long,Integer> accountDetails=new HashMap<>();
     public Main(){
         accountDetails.put(19979L,1234);
-        accountDetails.put(189798L,1456)
+        accountDetails.put(189798L,1456);
     }
 
     public HashMap<Long, Integer> getAccountDetails() {
